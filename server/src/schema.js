@@ -10,6 +10,17 @@ const typeDefs = gql`
     module(id: ID!): Module!
   }
 
+  type Mutation {
+    incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
+  }
+
+  type IncrementTrackViewsResponse {
+    track: Track,
+    code: Int!,
+    success: Boolean!,
+    message: String!  
+  }
+
   "A track is a group of Modules that teaches about a specific topic"
   type Track {
     id: ID!
